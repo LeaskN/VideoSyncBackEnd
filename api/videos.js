@@ -2,12 +2,6 @@ const express = require('express');
 const router = express.Router();
 const fetch = require('node-fetch');
 
-router.get('/', (req, res) => {
-  res.json({
-    message: '✅'
-  })
-});
-
 router.get('/search/:term', function(req, res, next) {
   fetch(`https://www.googleapis.com/youtube/v3/search?q=${req.params.term}&maxResults=50&type=video&part=snippet&key=${process.env.YOUTUBE_API_KEY}`)
     .then((res)=> res.json())
@@ -20,7 +14,6 @@ router.get('/search/:term', function(req, res, next) {
         })
     })
 });
-
 router.get('/suggestion/:term', function(req, res, next) {
   fetch(`http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=${req.params.term}`)
     .then((res)=> res.json())

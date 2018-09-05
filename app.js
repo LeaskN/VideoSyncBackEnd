@@ -7,6 +7,7 @@ require('dotenv').config(); //loads all variables in env file to our environment
 
 const app = express();
 
+const playlists = require("./api/playlists")
 const videos = require("./api/videos")
 
 app.use(logger('dev'));
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(cors());
+app.use('/api/v1/playlists', playlists);
 app.use('/api/v1/videos', videos);
 
 // catch 404 and forward to error handler
@@ -31,6 +33,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-console.log('howdy!');
+console.log('howdy from port 5000!');
 
 module.exports = app;

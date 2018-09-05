@@ -4,18 +4,34 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "dev": "nodemon"
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "cors": "^2.8.4",
     "debug": "~2.6.9",
     "dotenv": "^6.0.0",
     "express": "~4.16.0",
+    "font-awesome": "^4.7.0",
     "http-errors": "~1.6.2",
+    "knex": "^0.15.2",
     "morgan": "~1.9.0",
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.2.0",
+    "pg": "^7.4.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.3"
-  }
+  },
+  "description": "* Users can utilize this to watch videos in sync or create a surround-sound experience using any device with internet and video capabilities.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeaskN/VideoSyncBackEnd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeaskN/VideoSyncBackEnd/issues"
+  },
+  "homepage": "https://github.com/LeaskN/VideoSyncBackEnd#readme"
 }
