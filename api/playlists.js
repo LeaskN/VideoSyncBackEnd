@@ -10,12 +10,6 @@ router.get('/', (req, res, next) => {
       res.json(playlists);
     }).catch(next);
 });
-router.post('/', (req, res, next) => {
-  queries
-    .createPlaylist()
-    .then(res.json(req.body.title)
-    .catch(next));
-});
 router.get('/:id', (req, res, next) => {
   queries
     .getPlaylist(req.params.id)
@@ -43,11 +37,11 @@ router.post('/:id/videos', (req, res, next) => {
       res.json(videos[0])
     })
 })
-router.put('/:id/videos', (req, res, next) => {
+router.post('/', (req, res, next) => {
   queries
-    .create(req.body)
-    .then(videos => {
-      res.json(videos[0])
+    .createPlaylist(req.body)
+    .then(playlist => {
+      res.json(playlist)
     })
 })
 module.exports = router;

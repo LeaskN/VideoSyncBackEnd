@@ -13,8 +13,8 @@ module.exports = {
   create(video){
     return knex('video').insert(video, '*');
   },
-  createPlaylist(title){
-    return knex('playlist').insert({ title }, '*').then((results) => {
+  createPlaylist(playlist){
+    return knex('playlist').insert( playlist, '*').then((results) => {
       return results[0];
     });
   }
